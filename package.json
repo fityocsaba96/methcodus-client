@@ -1,0 +1,44 @@
+{
+  "name": "methcodus-client",
+  "version": "1.0.0",
+  "description": "Frontend of Methcodus",
+  "scripts": {
+    "start:dev": "ng serve",
+    "build": "ng build",
+    "lint": "ng lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fityocsaba96/methcodus-client.git"
+  },
+  "keywords": [],
+  "author": "Csaba Fityo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fityocsaba96/methcodus-client/issues"
+  },
+  "homepage": "https://github.com/fityocsaba96/methcodus-client#readme",
+  "dependencies": {
+    "@angular/common": "8.2.14",
+    "@angular/compiler": "8.2.14",
+    "@angular/core": "8.2.14",
+    "@angular/forms": "8.2.14",
+    "@angular/platform-browser": "8.2.14",
+    "@angular/platform-browser-dynamic": "8.2.14",
+    "@angular/router": "8.2.14",
+    "rxjs": "6.5.3",
+    "tslib": "1.10.0",
+    "zone.js": "0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "0.803.20",
+    "@angular/cli": "8.3.20",
+    "@angular/compiler-cli": "8.2.14",
+    "@angular/language-service": "8.2.14",
+    "@types/node": "12.12.14",
+    "codelyzer": "5.2.0",
+    "ts-node": "8.5.4",
+    "tslint": "5.20.1",
+    "typescript": "3.5.3"
+  }
+}
