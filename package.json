@@ -5,7 +5,8 @@
   "scripts": {
     "start:dev": "ng serve",
     "build": "ng build",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "format-code": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "@angular/language-service": "8.2.14",
     "@types/node": "12.12.14",
     "codelyzer": "5.2.0",
+    "prettier": "1.19.1",
     "ts-node": "8.5.4",
     "tslint": "5.20.1",
     "typescript": "3.5.3"
