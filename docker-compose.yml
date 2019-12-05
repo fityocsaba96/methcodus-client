@@ -10,9 +10,14 @@ services:
         published: 4200
     environment:
       NODE_ENV: development
+      SERVER_URI: http://server:3000
     volumes:
       - type: bind
         source: .
         target: /app
     working_dir: /app
     command: npm run start:dev
+networks:
+  default:
+    external:
+      name: methcodus
