@@ -4,7 +4,7 @@
   "description": "Frontend of Methcodus",
   "scripts": {
     "start:dev": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "lint": "ng lint",
     "start": "node src/server.js",
     "format-code": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
