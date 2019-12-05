@@ -19,6 +19,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.build.json",
             "aot": false,
+            "poll": 2000,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -63,7 +64,10 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "methcodus-client:build"
+            "browserTarget": "methcodus-client:build",
+            "disableHostCheck": true,
+            "host": "0.0.0.0",
+            "port": 4200
           },
           "configurations": {
             "production": {
