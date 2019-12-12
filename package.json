@@ -28,6 +28,7 @@
     "@angular/platform-browser": "8.2.14",
     "@angular/platform-browser-dynamic": "8.2.14",
     "@angular/router": "8.2.14",
+    "cheerio": "0.22.0",
     "compression": "1.7.4",
     "express": "4.17.1",
     "rxjs": "6.5.3",
