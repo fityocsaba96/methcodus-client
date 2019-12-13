@@ -2,31 +2,33 @@ const express = require('express');
 const compression = require('compression');
 const fs = require('fs');
 const cheerio = require('cheerio');
-
 const getProcessWithEnvVars = require('../scripts/get-process-with-env-vars');
 
-const root = 'dist';
-const indexPath = '/index.html';
+const serveStaticWithoutIndex = (root, indexPath) => {
+  const static = express.static(root);
+  return (request, response, next) => {
+    if (request.path !== '/' && request.path !== indexPath) {
+      static(request, response, next);
+    } else {
+      next();
+    }
+  };
+};
 
-const getHtmlWithEnvVars = () => {
-  const html = fs.readFileSync(root + indexPath, 'utf8');
+const serveIndexWithEnvVars = fullIndexPath => {
+  let html = fs.readFileSync(fullIndexPath, 'utf8');
   const $ = cheerio.load(html);
   const script = `<script>var process = ${JSON.stringify(getProcessWithEnvVars())};</script>`;
   $('body').append(script);
-  return $.html();
+  html = $.html();
+  return (_, response) => response.send(html);
 };
 
-const html = getHtmlWithEnvVars();
-const static = express.static(root);
+const root = 'dist';
+const indexPath = '/index.html';
 const server = express();
 
 server.use(compression());
-server.use((request, response, next) => {
-  if (request.path !== '/' && request.path !== indexPath) {
-    static(request, response, next);
-  } else {
-    next();
-  }
-});
-server.get('/*', (_, response) => response.send(html));
+server.use(serveStaticWithoutIndex(root, indexPath));
+server.get('/*', serveIndexWithEnvVars(root + indexPath));
 server.listen(process.env.PORT);
