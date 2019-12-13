@@ -10,7 +10,7 @@ services:
         published: 4200
     environment:
       NODE_ENV: development
-      SERVER_URI: http://server:3000
+      SERVER_URI: http://localhost:3000
     volumes:
       - type: bind
         source: .
