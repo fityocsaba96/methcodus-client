@@ -22,7 +22,6 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.build.json",
             "aot": false,
-            "poll": 2000,
             "assets": [
               "src/favicon.ico",
               "src/assets"
