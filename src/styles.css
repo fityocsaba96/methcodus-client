@@ -1,0 +1,106 @@
+@import '~codemirror/lib/codemirror';
+@import '~codemirror/addon/scroll/simplescrollbars';
+@import '~codemirror/theme/tomorrow-night-bright';
+@import '~typeface-fira-code';
+@import '~codemirror-advanceddialog/dist/dialog';
+
+.CodeMirror {
+  height: 450px;
+}
+
+.CodeMirror-sizer > .inactive-overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  top: 0 !important;
+  left: 0 !important;
+  cursor: not-allowed;
+  transition: background calc(1s / 3);
+}
+
+.CodeMirror-sizer > .inactive-overlay.transition {
+  background: rgba(17, 17, 17, calc(1 / 3));
+}
+
+.CodeMirror-sizer > .inactive-overlay.transition:hover {
+  background: rgba(17, 17, 17, calc(2 / 3));
+}
+
+.CodeMirror-code {
+  user-select: none;
+}
+
+.CodeMirror, .CodeMirror-advanced-dialog, .CodeMirror-advanced-dialog input, .CodeMirror-advanced-dialog button {
+  font-family: 'Fira Code', monospace;
+  font-size: 10pt;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.cm-s-tomorrow-night-bright.CodeMirror,.cm-s-tomorrow-night-bright .CodeMirror-gutters,.CodeMirror-advanced-dialog {
+  background: #111111;
+}
+
+.cm-s-tomorrow-night-bright .CodeMirror-cursor {
+  border-left-color: #EAEAEA;
+}
+
+.cm-s-tomorrow-night-bright div.CodeMirror-selected {
+  background: rgb(90, 90, 90);
+}
+
+.cm-s-tomorrow-night-bright .cm-matchhighlight {
+  background: rgba(90, 90, 90, 0.5);
+}
+
+.CodeMirror-overlayscroll-horizontal div, .CodeMirror-overlayscroll-vertical div {
+  background: #AAAAAA;
+}
+
+.cm-searching {
+  background-color: rgba(90, 90, 90, 0.5);
+}
+
+.CodeMirror-search-hint,.CodeMirror-advanced-dialog label,.CodeMirror-scrollbar-filler {
+  display: none !important;
+}
+
+.CodeMirror-advanced-dialog {
+  border: none;
+  border-top: 1px solid #AAAAAA;
+  box-shadow: none;
+  padding: 10px 5px;
+}
+
+.CodeMirror-advanced-dialog,.CodeMirror-advanced-dialog button {
+  color: #EAEAEA;
+}
+
+.CodeMirror-advanced-dialog input[type="text"] {
+  border: 1px solid #3F3F3F;
+  border-radius: 6px;
+  padding: 4px;
+  margin: 0 6px 6px 6px;
+}
+
+.CodeMirror-advanced-dialog button {
+  background: #3F3F3F;
+  border: none;
+  border-radius: 6px;
+  margin: 0 6px 0 0;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.CodeMirror-advanced-dialog button:focus {
+  outline-color: #AAAAAA;
+}
+
+.CodeMirror-advanced-dialog .buttons {
+  display: inherit;
+  margin-left: 6px;
+}
+
+.CodeMirror-advanced-dialog .CodeMirror-search-count {
+  margin: 0 0 6px 0;
+}
