@@ -3,6 +3,9 @@
 @import '~codemirror/theme/tomorrow-night-bright';
 @import '~typeface-fira-code';
 @import '~codemirror-advanceddialog/dist/dialog';
+@import '~primeicons/primeicons';
+@import '~primeng/resources/themes/luna-green/theme';
+@import '~primeng/resources/primeng.min';
 
 .CodeMirror {
   height: 450px;
