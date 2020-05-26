@@ -5,10 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { RoutingModule } from './modules/routing/routing.module';
 import { AppComponent } from './app.component';
 import { CodeEditorComponent } from './components/code-editor/code-editor.component';
+import { SocketIoModule } from 'ngx-socket-io';
 
 @NgModule({
   declarations: [AppComponent, CodeEditorComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, RoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    RoutingModule,
+    FormsModule,
+    SocketIoModule.forRoot({ url: `${process.env.SERVER_URI}/pair-programming`, options: { autoConnect: false } }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
