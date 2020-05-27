@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APIInterceptor } from './interceptors/api.interceptor';
 import { AuthService } from './services/auth.service';
 import { ExerciseService } from './services/exercise.service';
+import { SolutionService } from './services/solution.service';
 
 @NgModule({
   declarations: [AppComponent, CodeEditorComponent],
@@ -29,6 +30,7 @@ import { ExerciseService } from './services/exercise.service';
     },
     AuthService,
     ExerciseService,
+    SolutionService,
   ],
   bootstrap: [AppComponent],
 })
