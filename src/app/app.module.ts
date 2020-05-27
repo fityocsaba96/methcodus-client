@@ -14,9 +14,32 @@ import { PairProgrammingRequestService } from './services/pair-programming-reque
 import { PairProgrammingService } from './services/pair-programming.service';
 import { SolutionService } from './services/solution.service';
 import { UserService } from './services/user.service';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { UserSettingsComponent } from './pages/user-settings/user-settings.component';
+import { UserSolutionsComponent } from './pages/user-solutions/user-solutions.component';
+import { UserExercisesComponent } from './pages/user-exercises/user-exercises.component';
+import { AddExerciseComponent } from './pages/add-exercise/add-exercise.component';
+import { ExercisesComponent } from './pages/exercises/exercises.component';
+import { ExerciseComponent } from './pages/exercise/exercise.component';
+import { SolveExerciseComponent } from './pages/solve-exercise/solve-exercise.component';
 
 @NgModule({
-  declarations: [AppComponent, CodeEditorComponent],
+  declarations: [
+    AppComponent,
+    CodeEditorComponent,
+    WelcomeComponent,
+    RegisterComponent,
+    LoginComponent,
+    UserSettingsComponent,
+    UserSolutionsComponent,
+    UserExercisesComponent,
+    AddExerciseComponent,
+    ExercisesComponent,
+    ExerciseComponent,
+    SolveExerciseComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
