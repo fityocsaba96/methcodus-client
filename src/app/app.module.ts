@@ -11,6 +11,7 @@ import { APIInterceptor } from './interceptors/api.interceptor';
 import { AuthService } from './services/auth.service';
 import { ExerciseService } from './services/exercise.service';
 import { SolutionService } from './services/solution.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [AppComponent, CodeEditorComponent],
@@ -31,6 +32,7 @@ import { SolutionService } from './services/solution.service';
     AuthService,
     ExerciseService,
     SolutionService,
+    UserService,
   ],
   bootstrap: [AppComponent],
 })
