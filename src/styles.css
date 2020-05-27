@@ -7,6 +7,34 @@
 @import '~primeng/resources/themes/luna-green/theme';
 @import '~primeng/resources/primeng.min';
 
+body {
+  margin: 0;
+  padding: 0;
+  background: #3F3F3F;
+}
+
+.ui-menuitem .ui-menuitem-link {
+  padding: 17px 21px !important;
+}
+
+.ui-menubar-custom {
+  float: left !important;
+  padding: 0 !important;
+}
+
+.ui-menuitem-link:focus {
+  box-shadow: none !important;
+}
+
+.ui-menubar-root-list {
+  float: right !important;
+}
+
+.ui-submenu-list {
+  min-width: unset !important;
+  width: 100% !important;
+}
+
 .CodeMirror {
   height: 450px;
 }

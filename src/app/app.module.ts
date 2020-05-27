@@ -25,6 +25,7 @@ import { ExercisesComponent } from './pages/exercises/exercises.component';
 import { ViewExerciseComponent } from './pages/view-exercise/view-exercise.component';
 import { SolveExerciseComponent } from './pages/solve-exercise/solve-exercise.component';
 import { RoutingGuard } from './modules/routing/routing.guard';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { RoutingGuard } from './modules/routing/routing.guard';
     FormsModule,
     SocketIoModule.forRoot({ url: process.env.SERVER_URI + '/pair-programming', options: { autoConnect: false } }),
     HttpClientModule,
+    MenubarModule,
   ],
   providers: [
     {
