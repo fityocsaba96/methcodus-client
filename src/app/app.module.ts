@@ -24,6 +24,7 @@ import { AddExerciseComponent } from './pages/add-exercise/add-exercise.componen
 import { ExercisesComponent } from './pages/exercises/exercises.component';
 import { ExerciseComponent } from './pages/exercise/exercise.component';
 import { SolveExerciseComponent } from './pages/solve-exercise/solve-exercise.component';
+import { RoutingGuard } from './modules/routing/routing.guard';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { SolveExerciseComponent } from './pages/solve-exercise/solve-exercise.co
     PairProgrammingService,
     SolutionService,
     UserService,
+    RoutingGuard,
   ],
   bootstrap: [AppComponent],
 })
