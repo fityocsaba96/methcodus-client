@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APIInterceptor } from './interceptors/api.interceptor';
 import { AuthService } from './services/auth.service';
 import { ExerciseService } from './services/exercise.service';
+import { PairProgrammingRequestService } from './services/pair-programming-request.service';
 import { SolutionService } from './services/solution.service';
 import { UserService } from './services/user.service';
 
@@ -31,6 +32,7 @@ import { UserService } from './services/user.service';
     },
     AuthService,
     ExerciseService,
+    PairProgrammingRequestService,
     SolutionService,
     UserService,
   ],
