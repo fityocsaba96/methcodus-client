@@ -6,6 +6,8 @@ import { RoutingModule } from './modules/routing/routing.module';
 import { AppComponent } from './app.component';
 import { CodeEditorComponent } from './components/code-editor/code-editor.component';
 import { SocketIoModule } from 'ngx-socket-io';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { APIInterceptor } from './interceptors/api.interceptor';
 
 @NgModule({
   declarations: [AppComponent, CodeEditorComponent],
@@ -14,9 +16,16 @@ import { SocketIoModule } from 'ngx-socket-io';
     BrowserAnimationsModule,
     RoutingModule,
     FormsModule,
-    SocketIoModule.forRoot({ url: `${process.env.SERVER_URI}/pair-programming`, options: { autoConnect: false } }),
+    SocketIoModule.forRoot({ url: process.env.SERVER_URI + '/pair-programming', options: { autoConnect: false } }),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: APIInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
