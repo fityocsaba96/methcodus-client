@@ -18,8 +18,8 @@ export class APIInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
           this.authService.logout();
-          if (this.router.url !== '/login') {
-            this.router.navigateByUrl('/login');
+          if (this.router.url !== '/user/login') {
+            this.router.navigateByUrl('/user/login');
           }
         }
         return throwError(error);
