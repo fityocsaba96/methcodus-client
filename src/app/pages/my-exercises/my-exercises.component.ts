@@ -3,13 +3,13 @@ import { Title } from '@angular/platform-browser';
 import { APP_NAME } from '../../../constants';
 
 @Component({
-  selector: 'app-user-settings',
-  templateUrl: 'user-settings.component.html',
+  selector: 'app-my-exercises',
+  templateUrl: 'my-exercises.component.html',
 })
-export class UserSettingsComponent implements OnInit {
+export class MyExercisesComponent implements OnInit {
   constructor(private readonly title: Title) {}
 
   public ngOnInit() {
-    this.title.setTitle(`My Settings | ${APP_NAME}`);
+    this.title.setTitle(`My Exercises | ${APP_NAME}`);
   }
 }

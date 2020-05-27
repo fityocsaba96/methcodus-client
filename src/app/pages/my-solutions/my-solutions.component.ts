@@ -3,10 +3,10 @@ import { Title } from '@angular/platform-browser';
 import { APP_NAME } from '../../../constants';
 
 @Component({
-  selector: 'app-user-solutions',
-  templateUrl: 'user-solutions.component.html',
+  selector: 'app-my-solutions',
+  templateUrl: 'my-solutions.component.html',
 })
-export class UserSolutionsComponent implements OnInit {
+export class MySolutionsComponent implements OnInit {
   constructor(private readonly title: Title) {}
 
   public ngOnInit() {

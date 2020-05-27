@@ -17,12 +17,12 @@ import { UserService } from './services/user.service';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
-import { UserSettingsComponent } from './pages/user-settings/user-settings.component';
-import { UserSolutionsComponent } from './pages/user-solutions/user-solutions.component';
-import { UserExercisesComponent } from './pages/user-exercises/user-exercises.component';
+import { MySettingsComponent } from './pages/my-settings/my-settings.component';
+import { MySolutionsComponent } from './pages/my-solutions/my-solutions.component';
+import { MyExercisesComponent } from './pages/my-exercises/my-exercises.component';
 import { AddExerciseComponent } from './pages/add-exercise/add-exercise.component';
 import { ExercisesComponent } from './pages/exercises/exercises.component';
-import { ExerciseComponent } from './pages/exercise/exercise.component';
+import { ViewExerciseComponent } from './pages/view-exercise/view-exercise.component';
 import { SolveExerciseComponent } from './pages/solve-exercise/solve-exercise.component';
 import { RoutingGuard } from './modules/routing/routing.guard';
 
@@ -33,12 +33,12 @@ import { RoutingGuard } from './modules/routing/routing.guard';
     WelcomeComponent,
     RegisterComponent,
     LoginComponent,
-    UserSettingsComponent,
-    UserSolutionsComponent,
-    UserExercisesComponent,
+    MySettingsComponent,
+    MySolutionsComponent,
+    MyExercisesComponent,
     AddExerciseComponent,
     ExercisesComponent,
-    ExerciseComponent,
+    ViewExerciseComponent,
     SolveExerciseComponent,
   ],
   imports: [
