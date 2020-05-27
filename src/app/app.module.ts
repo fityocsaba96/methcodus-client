@@ -9,6 +9,7 @@ import { SocketIoModule } from 'ngx-socket-io';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APIInterceptor } from './interceptors/api.interceptor';
 import { AuthService } from './services/auth.service';
+import { ExerciseService } from './services/exercise.service';
 
 @NgModule({
   declarations: [AppComponent, CodeEditorComponent],
@@ -27,6 +28,7 @@ import { AuthService } from './services/auth.service';
       multi: true,
     },
     AuthService,
+    ExerciseService,
   ],
   bootstrap: [AppComponent],
 })
