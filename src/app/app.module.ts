@@ -11,6 +11,7 @@ import { APIInterceptor } from './interceptors/api.interceptor';
 import { AuthService } from './services/auth.service';
 import { ExerciseService } from './services/exercise.service';
 import { PairProgrammingRequestService } from './services/pair-programming-request.service';
+import { PairProgrammingService } from './services/pair-programming.service';
 import { SolutionService } from './services/solution.service';
 import { UserService } from './services/user.service';
 
@@ -33,6 +34,7 @@ import { UserService } from './services/user.service';
     AuthService,
     ExerciseService,
     PairProgrammingRequestService,
+    PairProgrammingService,
     SolutionService,
     UserService,
   ],
