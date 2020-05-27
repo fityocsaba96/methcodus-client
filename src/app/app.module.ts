@@ -8,6 +8,7 @@ import { CodeEditorComponent } from './components/code-editor/code-editor.compon
 import { SocketIoModule } from 'ngx-socket-io';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APIInterceptor } from './interceptors/api.interceptor';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [AppComponent, CodeEditorComponent],
@@ -25,6 +26,7 @@ import { APIInterceptor } from './interceptors/api.interceptor';
       useClass: APIInterceptor,
       multi: true,
     },
+    AuthService,
   ],
   bootstrap: [AppComponent],
 })
