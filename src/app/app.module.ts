@@ -33,6 +33,8 @@ import { PasswordModule } from 'primeng/password';
 import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { AccordionModule } from 'primeng/accordion';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,8 @@ import { MessageModule } from 'primeng/message';
     ToastModule,
     MessagesModule,
     MessageModule,
+    AccordionModule,
+    InputTextareaModule,
   ],
   providers: [
     {

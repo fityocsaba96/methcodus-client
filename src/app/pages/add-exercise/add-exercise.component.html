@@ -1,0 +1,55 @@
+<p-card>
+  <div class="ui-fluid">
+    <p-messages key="error" [closable]="false"></p-messages>
+    <div class="p-field">
+      <label for="name">Name</label>
+      <input [(ngModel)]="createExerciseDto.name" id="name" type="text" pInputText>
+    </div>
+    <div class="p-field">
+      <label for="description">Description</label>
+      <textarea [(ngModel)]="createExerciseDto.description" id="description" type="text" rows="4" pInputTextarea></textarea>
+    </div>
+    <div class="p-field">
+      <label for="test-cases">Test cases</label>
+      <textarea [(ngModel)]="testCases" id="test-cases" type="text" rows="10" pInputTextarea></textarea>
+    </div>
+    <div class="p-field">
+      <p-accordion [multiple]="true">
+        <p-accordionTab header="Test cases structure">
+          <p>Test cases should be provided in JSON format.</p>
+          <p>There should be at least one test case.</p>
+          <p>Each test case consists of a description, parameter list, matcher and the expected value.</p>
+          <p>A parameter and the expected value includes a type and a value.</p>
+          <p>Possible types are "integer", "double", "string", "boolean" and its array versions (like "string array") are also supported.</p>
+          <p>Array values must be separated by "|" characters, it can also be escaped if needed.</p>
+          <p>Matcher can be either "equals" or "not equals".</p>
+        </p-accordionTab>
+        <p-accordionTab header="Sample structure for test cases">
+          <pre>{{'[
+  {
+    "description": "it should return the ...",
+    "parameters": [
+      {
+        "type": "integer",
+        "value": "2"
+      },
+      {
+        "type": "string array",
+        "value": "one|two|three|four"
+      },
+      ...
+    ],
+    "matcher": "not equals",
+    "expected": {
+      "type": "boolean",
+      "value": "true"
+    }
+  },
+  ...
+]'}}</pre>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+    <p-button label="Add exercise" (click)="addExercise()"></p-button>
+  </div>
+</p-card>

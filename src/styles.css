@@ -42,6 +42,7 @@ app-welcome .ui-card {
 
 .ui-messages {
   max-width: fit-content !important;
+  min-width: 100%;
 }
 
 .ui-messages-icon {
@@ -54,6 +55,20 @@ app-welcome .ui-card {
 
 .pair-programming-request {
   background: #1ea04c;
+}
+
+app-add-exercise .ui-card {
+  width: 50%;
+  min-width: 500px;
+  margin: 20px auto 0 auto;
+}
+
+.ui-card {
+  background: #252525 !important;
+}
+
+textarea.ui-inputtext {
+  resize: vertical;
 }
 
 .CodeMirror {
