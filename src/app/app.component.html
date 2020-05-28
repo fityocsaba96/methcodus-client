@@ -1,3 +1,3 @@
 <p-toast position="bottom-right" key="toast"></p-toast>
-<p-menubar *ngIf="loggedIn" [model]="menuItems"><a routerLink="/exercises" class="ui-menuitem-link"><img src="../assets/logo_small.png" alt=""></a></p-menubar>
+<p-menubar *ngIf="loggedIn" [model]="menuItems"><a routerLink="/exercises" class="ui-menuitem-link" (click)="checkPairProgrammingRequest()"><img src="../assets/logo_small.png" alt=""></a></p-menubar>
 <router-outlet></router-outlet>

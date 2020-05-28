@@ -52,6 +52,10 @@ app-welcome .ui-card {
   margin-left: 0 !important;
 }
 
+.pair-programming-request {
+  background: #1ea04c;
+}
+
 .CodeMirror {
   height: 450px;
 }
