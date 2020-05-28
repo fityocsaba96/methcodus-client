@@ -28,6 +28,11 @@ import { RoutingGuard } from './modules/routing/routing.guard';
 import { MenubarModule } from 'primeng/menubar';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { ToastModule } from 'primeng/toast';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -54,6 +59,11 @@ import { ButtonModule } from 'primeng/button';
     MenubarModule,
     CardModule,
     ButtonModule,
+    InputTextModule,
+    PasswordModule,
+    ToastModule,
+    MessagesModule,
+    MessageModule,
   ],
   providers: [
     {

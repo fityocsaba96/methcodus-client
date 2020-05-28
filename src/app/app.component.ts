@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
 
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  providers: [MessageService],
 })
 export class AppComponent implements OnInit {
   public menuItems: MenuItem[] = [

@@ -1,0 +1,22 @@
+<div>
+  <a routerLink="/"><img src="../../../assets/logo_medium.png"></a>
+</div>
+<div>
+  <p-card>
+    <div class="ui-fluid">
+      <p-messages key="error" [closable]="false"></p-messages>
+      <div class="p-field">
+        <label for="user-name">User name</label>
+        <input [(ngModel)]="loginDto.userName" id="user-name" type="text" pInputText>
+      </div>
+      <div class="p-field">
+        <label for="password">Password</label>
+        <input [(ngModel)]="loginDto.password" id="password" pPassword type="password" [feedback]="false">
+      </div>
+      <p-button label="Login" (click)="login()"></p-button>
+    </div>
+  </p-card>
+</div>
+<div>
+  <p-card>New to Methcodus? <a routerLink="/user/register">Register</a></p-card>
+</div>

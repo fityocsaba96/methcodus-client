@@ -26,6 +26,10 @@ export class AuthService {
     return localStorage.getItem('userJWTToken');
   }
 
+  public set jwtToken(jwtToken: string) {
+    localStorage.setItem('userJWTToken', jwtToken);
+  }
+
   public isLoggedIn(): boolean {
     return this.jwtToken !== null;
   }

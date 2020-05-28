@@ -6,6 +6,7 @@
 @import '~primeicons/primeicons';
 @import '~primeng/resources/themes/luna-green/theme';
 @import '~primeng/resources/primeng.min';
+@import '~primeflex/primeflex';
 
 body {
   margin: 0;
@@ -33,6 +34,22 @@ body {
 .ui-submenu-list {
   min-width: unset !important;
   width: 100% !important;
+}
+
+app-welcome .ui-card {
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ui-messages {
+  max-width: fit-content !important;
+}
+
+.ui-messages-icon {
+  display: none !important;
+}
+
+.ui-messages-detail {
+  margin-left: 0 !important;
 }
 
 .CodeMirror {
