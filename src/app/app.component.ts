@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { PairProgrammingRequestService } from './services/pair-programming-request.service';
 import { GetMyPairProgrammingRequestResponse } from './interfaces/responses/pair-programming-request.response';
 import { values } from 'ramda';
+import { transformLanguage, transformMethod } from './lib/transform-exercise-properties';
 
 @Component({
   selector: 'app-root',
@@ -62,7 +63,8 @@ export class AppComponent implements OnInit {
     this.menu.pairProgrammingRequest.queryParams = {
       language: response.programmingLanguage,
       method: response.softwareDevelopmentMethod,
-      pair: response.pairUser._id,
+      pairId: response.pairUser._id,
+      pairUserName: response.pairUser.userName,
     };
     this.menu.pairProgrammingRequest.visible = true;
     this.menu.separator.visible = true;
@@ -74,9 +76,9 @@ export class AppComponent implements OnInit {
   }
 
   private generatePairProgrammingRequestLabel(response: GetMyPairProgrammingRequestResponse): string {
-    const language = { javascript: 'JavaScript', java: 'Java' }[response.programmingLanguage];
-    const method = { 'pair-programming': 'pair programming', 'ping-pong': 'ping pong' }[response.softwareDevelopmentMethod];
-    return `${response.pairUser.userName} sent you a programming request! (${method} with ${language})`;
+    const language = transformLanguage(response.programmingLanguage);
+    const method = transformMethod(response.softwareDevelopmentMethod);
+    return `${response.pairUser.userName} sent you a programming request! (${language} with ${method})`;
   }
 
   private onLogoutClick(): void {
