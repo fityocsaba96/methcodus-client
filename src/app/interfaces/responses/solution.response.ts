@@ -12,7 +12,7 @@ export type TestOrCreateSolutionResponse = {
   ownTestResults?: TestResults;
 };
 
-type TestResults = {
+export type TestResults = {
   results?: { name: string; status: string }[];
   error?: string;
 };

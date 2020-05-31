@@ -35,6 +35,10 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { AccordionModule } from 'primeng/accordion';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TableModule } from 'primeng/table';
+import { PanelModule } from 'primeng/panel';
+import { TooltipModule } from 'primeng/tooltip';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -68,6 +72,10 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     MessageModule,
     AccordionModule,
     InputTextareaModule,
+    TableModule,
+    PanelModule,
+    TooltipModule,
+    DialogModule,
   ],
   providers: [
     {

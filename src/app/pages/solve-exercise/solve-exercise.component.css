@@ -1,0 +1,27 @@
+.p-grid {
+  margin: 0;
+}
+
+:host button {
+  margin: 0 10px;
+}
+
+.test-results-table i.pi {
+  float: right;
+}
+
+.test-results-table td {
+  border: none;
+}
+
+.test-buttons button {
+  float: right;
+}
+
+.test-buttons button, .send-programming-request-button {
+  width: 110px;
+}
+
+.function-call-code-label {
+  padding: 0;
+}

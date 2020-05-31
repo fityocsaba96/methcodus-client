@@ -14,6 +14,13 @@ body {
   background: #3F3F3F;
 }
 
+.ui-menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .ui-menuitem .ui-menuitem-link {
   padding: 17px 21px !important;
 }
@@ -45,7 +52,7 @@ app-welcome .ui-card {
   min-width: 100%;
 }
 
-.ui-messages-icon {
+.ui-messages-icon,.ui-message-icon {
   display: none !important;
 }
 
@@ -60,7 +67,12 @@ app-welcome .ui-card {
 app-add-exercise .ui-card {
   width: 50%;
   min-width: 500px;
-  margin: 20px auto 0 auto;
+  margin: 77px auto 20px auto;
+}
+
+app-solve-exercise .ui-card {
+  width: 100%;
+  margin: 77px 0 20px 0;
 }
 
 .ui-card {
@@ -71,8 +83,27 @@ textarea.ui-inputtext {
   resize: vertical;
 }
 
-.CodeMirror {
-  height: 450px;
+app-solve-exercise .ui-panel-content {
+  height: 150px !important;
+  overflow-y: auto !important;
+}
+
+app-solve-exercise .test-results-panel .ui-panel-content {
+  height: 312px !important;
+}
+
+app-solve-exercise .solving-errors .ui-messages {
+  max-height: 189px !important;
+  overflow-y: auto !important;
+  margin: 0;
+}
+
+app-solve-exercise .CodeMirror {
+  height: 350px;
+}
+
+.CodeMirror-scroll {
+  box-sizing: content-box;
 }
 
 .CodeMirror-sizer > .inactive-overlay {

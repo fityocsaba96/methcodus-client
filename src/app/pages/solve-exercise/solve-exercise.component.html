@@ -1,0 +1,128 @@
+<p-dialog header="Send programming request" [(visible)]="displaySendPairProgrammingRequestDialog" [modal]="true" [closable]="false" [resizable]="false">
+  <div class="ui-fluid">
+    <p-messages key="sendPairProgrammingRequestError" [closable]="false"></p-messages>
+    <div class="p-field">
+      <label for="pair-user-name">User name of pair</label>
+      <input [(ngModel)]="pairUserName" id="pair-user-name" type="text" pInputText>
+    </div>
+    <p-button class="send-programming-request-button" (click)="sendPairProgrammingRequest()" [label]="sendPairProgrammingRequestButtonLabel" [disabled]="sendPairProgrammingRequestButtonDisabled"></p-button>
+  </div>
+</p-dialog>
+<p-card>
+  <div class="p-grid">
+    <div class="p-col-4">
+      <div class="p-grid">
+        <div class="p-col-12">
+          <div class="box"><strong>{{ exerciseDetails?.name }}</strong><span> (created by
+              {{ exerciseDetails?.createdBy.userName }})</span></div>
+        </div>
+      </div>
+      <div class="p-grid">
+        <div class="p-col-12">
+          <div class="box"><span>Objective: solve the exercise in {{ transformedLanguage }}<ng-container
+                *ngIf="method !== 'none'"> with {{ transformedMethod }}</ng-container>
+              <ng-container *ngIf="pairProgrammingOrPingPong && pairConnected"> together with {{ pairUserName }}</ng-container>
+            </span></div>
+        </div>
+      </div>
+      <div class="p-grid">
+        <div class="p-col-12">
+          <div class="box">
+            <div class="ui-fluid">
+              <div class="p-field p-grid">
+                <label for="function-call-code" class="p-col-fixed function-call-code-label">Function call code</label>
+                <div class="p-col">
+                  <input id="function-call-code" type="text" (input)="insertFunctionCallCodeHelperAndSendMessageToPair()" pInputText [disabled]="functionCallCodeInputDisabled"
+                    pTooltip="This is how you would call the solution function. It helps the tester to find the function to test."
+                    #functionCallCode>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="method === 'tdd' || (pairConnected && method === 'ping-pong')" class="p-grid">
+        <div class="p-col-12">
+          <div class="box">
+            <p-message severity="info"
+              [text]="'Now it is ' + tddStage + ' stage' + (method === 'ping-pong' ? ' and the control is in ' + nextPlayer + ' hands' : '')">
+            </p-message>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-col-4">
+      <p-panel header="Exercise description">{{ exerciseDetails?.description }}</p-panel>
+    </div>
+    <div class="p-col-4">
+      <div class="box">
+        <p-messages class="solving-errors" key="error" [closable]="false"></p-messages>
+      </div>
+    </div>
+  </div>
+  <div class="p-grid">
+    <div class="p-col-4">
+      <div class="box">
+        <p-panel header="Built in test results" class="test-results-panel">
+          <p-table [columns]="testResultsColumns" [value]="builtInTestResults" [autoLayout]="true"
+            class="test-results-table">
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+              <tr>
+                <td *ngFor="let column of columns">
+                  <ng-container *ngIf="column.field === 'status'; else field" [ngSwitch]="rowData[column.field]">
+                    <i *ngSwitchCase="'pass'" class="pi pi-check"></i>
+                    <i *ngSwitchCase="'fail'" class="pi pi-times"></i>
+                    <i *ngSwitchCase="'skip'" class="pi pi-question"></i>
+                  </ng-container>
+                  <ng-template #field>{{rowData[column.field]}}</ng-template>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-panel>
+      </div>
+    </div>
+    <div class="p-col-8">
+      <div class="box">
+        <app-code-editor [language]="language" [edit-mode]="solutionCodeEditorEditMode"
+          (action)="solutionCodeEditorAction($event)" #solutionCodeEditor></app-code-editor>
+      </div>
+    </div>
+  </div>
+  <div class="p-grid" *ngIf="tddOrPingPong">
+    <div class="p-col-4">
+      <div class="box">
+        <p-panel header="My test results" class="test-results-panel">
+          <p-table [columns]="testResultsColumns" [value]="ownTestResults" [autoLayout]="true"
+            class="test-results-table">
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+              <tr>
+                <td *ngFor="let column of columns">
+                  <ng-container *ngIf="column.field === 'status'; else field" [ngSwitch]="rowData[column.field]">
+                    <i *ngSwitchCase="'pass'" class="pi pi-check"></i>
+                    <i *ngSwitchCase="'fail'" class="pi pi-times"></i>
+                    <i *ngSwitchCase="'skip'" class="pi pi-question"></i>
+                  </ng-container>
+                  <ng-template #field>{{rowData[column.field]}}</ng-template>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </p-panel>
+      </div>
+    </div>
+    <div class="p-col-8">
+      <div class="box">
+        <app-code-editor [language]="language" [edit-mode]="testCodeEditorEditMode"
+          (action)="testCodeEditorAction($event)" #testCodeEditor></app-code-editor>
+      </div>
+    </div>
+  </div>
+  <div class="p-grid test-buttons">
+    <div class="p-col-12">
+      <button pButton type="button" [label]="submitButtonLabel" [disabled]="submitButtonDisabled"
+        class="ui-button-secondary" (click)="submit()"></button>
+      <button pButton type="button" [label]="testButtonLabel" [disabled]="testButtonDisabled" (click)="test()"></button>
+    </div>
+  </div>
+</p-card>

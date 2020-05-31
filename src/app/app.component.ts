@@ -42,6 +42,7 @@ export class AppComponent implements OnInit {
   public ngOnInit(): void {
     this.loggedIn = this.authService.isLoggedIn();
     this.authService.loggedInChange.subscribe(loggedIn => (this.loggedIn = loggedIn));
+    this.pairProgrammingRequestService.checkPairProgrammingRequest.subscribe(this.checkPairProgrammingRequest.bind(this));
     if (this.loggedIn) {
       this.checkPairProgrammingRequest();
     }
