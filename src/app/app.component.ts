@@ -19,13 +19,7 @@ export class AppComponent implements OnInit {
     separator: { separator: true, visible: false },
     myAccount: {
       label: 'My account',
-      items: [
-        { label: 'My solutions', routerLink: 'user/solutions' },
-        { label: 'My exercises', routerLink: 'user/exercises' },
-        { label: 'My settings', routerLink: 'user/settings' },
-        { separator: true },
-        { label: 'Logout', command: this.onLogoutClick.bind(this) },
-      ],
+      items: [{ label: 'Logout', command: this.onLogoutClick.bind(this) }],
     },
   };
 
