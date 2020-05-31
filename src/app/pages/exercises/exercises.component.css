@@ -1,0 +1,18 @@
+.add-exercise-button {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 100%;
+}
+
+.exercise-created-by {
+  font-style: italic;
+}
+
+.exercise-created-by,.exercises label {
+  font-size: 9pt;
+}
+
+.solve-exercise-button {
+  display: flex;
+  align-items: flex-end;
+}

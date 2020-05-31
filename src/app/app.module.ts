@@ -39,6 +39,7 @@ import { TableModule } from 'primeng/table';
 import { PanelModule } from 'primeng/panel';
 import { TooltipModule } from 'primeng/tooltip';
 import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { DialogModule } from 'primeng/dialog';
     PanelModule,
     TooltipModule,
     DialogModule,
+    DropdownModule,
   ],
   providers: [
     {

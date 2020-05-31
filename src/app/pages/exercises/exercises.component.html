@@ -1,0 +1,38 @@
+<p-card>
+  <div class="ui-fluid">
+    <div class="p-field">
+      <p-button class="add-exercise-button" icon="pi pi-plus" routerLink="/exercises/add"></p-button>
+    </div>
+    <div class="p-field exercises">
+      <p-accordion [multiple]="true" *ngFor="let exercise of exercises">
+        <p-accordionTab [header]="exercise.name">
+          <ng-template pTemplate="content">
+            <div class="ui-fluid">
+              <div class="p-field exercise-created-by">
+                Created by {{ exercise.createdBy.userName }} on {{ exercise.createdAt | date }}
+              </div>
+              <div class="p-field">
+                {{ descriptions[exercise._id] || (loadExerciseDescription(exercise._id) | async) }}
+              </div>
+              <div class="p-field">
+                <div class="ui-fluid p-formgrid p-grid">
+                  <div class="p-field p-col">
+                    <label for="language">Programming language</label>
+                    <p-dropdown inputId="language" [options]="languages" [(ngModel)]="selectedLanguage" placeholder="Choose one" optionLabel="name"></p-dropdown>
+                  </div>
+                  <div class="p-field p-col">
+                    <label for="method">Software development method</label>
+                    <p-dropdown inputId="method" [options]="methods" [(ngModel)]="selectedMethod" placeholder="Choose one" optionLabel="name"></p-dropdown>
+                  </div>
+                  <div class="p-field p-col solve-exercise-button">
+                    <button pButton type="button" label="Solve exercise" (click)="navigateToSolveExercise(exercise._id)"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-accordionTab>
+      </p-accordion>
+    </div>
+  </div>
+</p-card>

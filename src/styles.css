@@ -64,7 +64,7 @@ app-welcome .ui-card {
   background: #1ea04c;
 }
 
-app-add-exercise .ui-card {
+app-add-exercise .ui-card, app-exercises .ui-card {
   width: 50%;
   min-width: 500px;
   margin: 77px auto 20px auto;
@@ -85,6 +85,11 @@ textarea.ui-inputtext {
 
 app-solve-exercise .ui-panel-content {
   height: 150px !important;
+  overflow-y: auto !important;
+}
+
+app-exercises .ui-card-content .exercises {
+  max-height: calc(100vh - 190px) !important;
   overflow-y: auto !important;
 }
 
