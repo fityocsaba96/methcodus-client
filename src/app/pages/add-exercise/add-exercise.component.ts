@@ -60,7 +60,7 @@ export class AddExerciseComponent implements OnInit {
   }
 
   private showExerciseAddedMessage(): void {
-    this.router.navigateByUrl('/exercises');
+    this.router.navigateByUrl('/user/exercises');
     this.messageService.add({ key: 'toast', severity: 'success', summary: 'Exercise added successfully', life: 5000, closable: true });
   }
 
